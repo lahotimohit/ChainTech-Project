@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href= {% static 'style.css' %} />
+  </head>
+  <body>
+    <h1>Database Information</h1>
+    {% if data %}
+    <table class="data-table">
+      <thead>
+        <th>Id</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+      </thead>
+      {% for info in data %}
+      <tr>
+        <td>{{info.id}}</td>
+        <td>{{info.First_Name}}</td>
+        <td>{{info.Last_Name}}</td>
+        <td>{{info.Email}}</td>
+      </tr>
+      {% endfor %}
+    </table>
+    {% else %}
+    <p>No Record Found...</p>
+    {% endif %}
+    <script src="" async defer></script>
+  </body>
+</html>
